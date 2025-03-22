@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            
+            background-image: url('https://media.istockphoto.com/id/1718836053/photo/qna-or-questions-and-answers-concept-yellow-magnifying-glass-with-question-symbol-on-memo.webp?a=1&b=1&s=612x612&w=0&k=20&c=QKbKp2s3Rc4LtfQ7Qdn0ck112gDm5Hmpt0QDUDqKKiY='); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        button {
+            
+            background-color: green;
+            color: black; 
+            font-weight: bold; 
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen; 
+        }
+    </style>
+    <script>
+        function submitForm() {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const city = document.getElementById("city").value;
+            const hobby = document.getElementById("hobby").value;
+
+            const params = new URLSearchParams({
+                name: name,
+                age: age,
+                city: city,
+                hobby: hobby
+            });
+            window.location.href = `result.html?${params.toString()}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>User Information Form</h1>
+    <label for="name">What is your name?:</label>
+    <input type="text" id="name"><br><br>
+
+    <label for="age">How old are you?:</label>
+    <input type="number" id="age"><br><br>
+
+    <label for="city">What city do you live in?:</label>
+    <input type="text" id="city"><br><br>
+
+    <label for="hobby">What do you love doing?:</label>
+    <input type="text" id="hobby"><br><br>
+
+    <button onclick="submitForm()">Submit</button>
+</body>
+</html>

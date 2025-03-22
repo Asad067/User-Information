@@ -1,0 +1,22 @@
+<style>
+    label {
+        display: block;
+        margin-bottom: 10px; /* Space below each label */
+    }
+    input {
+        display: block;
+        margin-bottom: 20px; /* Space below each input field */
+    }
+</style>
+
+<label for="name">What is your name?:</label>
+<input type="text" id="name">
+
+<label for="age">How old are you?:</label>
+<input type="number" id="age">
+
+<label for="city">What city do you live in?:</label>
+<input type="text" id="city">
+
+<label for="hobby">What do you love doing?:</label>
+<input type="text" id="hobby">

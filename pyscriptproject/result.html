@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        /* Add background image styling */
+        body {
+            background-image: url('https://plus.unsplash.com/premium_photo-1672759267922-04877992889d?q=80&w=1591&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white; /* Default text color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Style for the changing-color text */
+        #result {
+            font-size: 29px;
+            color: black;
+            font-weight: bold;
+            animation: colorChange 9s infinite; /* Change colors every 3 seconds */
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: white;
+            }
+            25% {
+                color: red;
+            }
+            50% {
+                color: green;
+            }
+            75% {
+                color: black;
+            }
+            100% {
+                color: rgb(81, 0, 255); /* Loop back to the starting color */
+            }
+        }
+
+        /* Style for the exit button */
+        #exitButton {
+            background-color: #ff4d4d; /* Red button */
+            color: white; /* White text */
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        #exitButton:hover {
+            background-color: #cc0000; /* Darker red when hovering */
+        }
+    </style>
+    <script>
+        function displayResult() {
+            // Parse query parameters from the URL
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get("name");
+            const age = params.get("age");
+            const city = params.get("city");
+            const hobby = params.get("hobby");
+
+            // Construct the sentence
+            const sentence = `Your name is ${name}, you are ${age} years old, you live in ${city}, and your hobby is ${hobby}.`;
+
+            // Display the sentence with color-changing animation
+            document.getElementById("result").innerText = sentence;
+        }
+
+        function goBack() {
+            // Redirect to the index.html page
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body onload="displayResult()">
+    <h1>User Information</h1>
+    <p id="result"></p>
+    
+    <button id="exitButton" onclick="goBack()">Exit</button>
+</body>
+</html>
