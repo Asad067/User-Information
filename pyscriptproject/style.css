@@ -1,11 +1,11 @@
 <style>
     label {
         display: block;
-        margin-bottom: 10px; /* Space below each label */
+        margin-bottom: 10px; 
     }
     input {
         display: block;
-        margin-bottom: 20px; /* Space below each input field */
+        margin-bottom: 20px; 
     }
 </style>
 
@@ -20,3 +20,4 @@
 
 <label for="hobby">What do you love doing?:</label>
 <input type="text" id="hobby">
+    
